@@ -27,7 +27,8 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->bigInteger('auth_id')->unsigned();
-            $table->integer('roll_number')->unsigned();
+            $table->bigInteger('agency_id')->unsigned();
+            $table->integer('roll_number')->nullable()->unsigned();
             $table->string('mobile_phone', 20);
             $table->date('dob')->nullable();
             $table->text('address');
