@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'agency',
         'passwords' => 'users',
     ],
 
@@ -46,6 +46,18 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'agency' => [
+            'driver' => 'jwt',
+            'provider' => 'agencies',
+            'hash' => false,
+        ],
+
+        'user' => [
+            'driver' => 'jwt',
+            'provider' => 'users',
+            'hash' => false,
+        ]
     ],
 
     /*
@@ -68,9 +80,13 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Authentication::class,
         ],
 
+        'agencies' => [
+            'driver' => 'eloquent',
+            'model' => App\Authentication::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
