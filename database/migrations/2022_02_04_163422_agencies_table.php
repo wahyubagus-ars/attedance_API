@@ -20,12 +20,13 @@ class AgenciesTable extends Migration
 
         Schema::create('agencies', function(Blueprint $table){
             $table->bigIncrements('id');
+            $table->bigInteger('auth_id')->unsigned();
             $table->string('agency_name', 100);
             $table->string('email', 50)->unique();
             $table->string('phone_number', 20);
             $table->string('phone_number_2', 20)->nullable();
             $table->date('since')->nullable();
-            $table->text('addres')->nullable();
+            $table->text('address')->nullable();
             $table->string('owner', 100)->nullable();
             $table->boolean('status')->nullable()->default(true);
             $table->timestamps();

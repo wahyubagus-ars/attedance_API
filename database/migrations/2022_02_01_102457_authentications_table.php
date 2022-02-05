@@ -20,7 +20,10 @@ class AuthenticationsTable extends Migration
             $table->string('email', 64)->unique();
             $table->string('password', 100);
             $table->integer('role_id')->unsigned();
-            $table->boolean('status')->default(true);
+            $table->bigInteger('agency_id')->nullable()->unsigned()->unique();
+            $table->bigInteger('user_id')->nullable()->unsigned()->unique();
+            $table->boolean('active')->default(false);
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

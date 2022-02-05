@@ -17,6 +17,7 @@ class SettingsTable extends Migration
         Schema::create('settings', function(Blueprint $table){
             $table->bigIncrements('id');
             $table->string('instanstion', 100);
+            $table->bigInteger('agency_id')->unsigned();
             $table->string('max_time', 100);
             $table->integer('max_late_count')->default(0);
             $table->boolean('status')->default(false);
