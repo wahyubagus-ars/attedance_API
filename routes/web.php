@@ -1,5 +1,11 @@
 <?php
 
+use App\Constants\Constant;
+use App\User;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
