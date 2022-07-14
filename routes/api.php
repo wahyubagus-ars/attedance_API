@@ -26,3 +26,11 @@ Route::prefix('/attendance')->middleware('auth.agency')->group(function(){
         return "test";
     });
 });
+
+Route::prefix('/agency')->group(function (){
+    Route::post('/find', 'AgencyController@getAgencyById');
+});
+
+Route::prefix('/user')->group(function (){
+    Route::post('/find', 'UserController@getUserById');
+});
